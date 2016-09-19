@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 15
+
+development:
+  <<: *default
+  database: money_bag_development
+
+test:
+  <<: *default
+  database: money_bag_test
+
+production:
+  <<: *default
+  password: <%= ENV['DATABASE_URL'] %>
