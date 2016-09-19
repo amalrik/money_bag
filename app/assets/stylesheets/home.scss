@@ -1,0 +1,59 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  text-align: center;
+  background-color: #18BC9C;
+
+  img {
+    margin: 0 auto 20px;
+  }
+
+  .container {
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+
+  .intro-text .site-name {
+    font-size: 4.75em;
+  }
+
+  .intro-text .site-name {
+    display: block;
+    font-weight: 700;
+    font-size: 2em;
+  }
+
+  @media (min-width: 768px) {
+    .intro-text .site-name {
+      font-size: 4.75em;
+    }
+
+    .intro-text .site-name {
+      display: block;
+      font-weight: 700;
+      font-size: 2em;
+    }
+  }
+}
+
+body {
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  }
+  .navbar-custom .navbar-brand, .navbar-custom .navbar-brand.active, .navbar-custom .navbar-brand:active, .navbar-custom .navbar-brand:focus, .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-nav li a, header {
+      color: #fff;
+  }
+  .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+      color: #5e5e5e;
+      background-color: transparent;
+  }
+}
+
+footer { 
+  color: #fff;
+  .footer-below {
+    padding: 25px 0;
+    background-color: #233140;
+  }
+}

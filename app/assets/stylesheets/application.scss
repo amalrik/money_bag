@@ -1,0 +1,27 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "home";
+
+$font-family-base: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+$font-size-base: 14px;
+
+body {
+  font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;  
+}
+
+.navbar-custom {
+    padding: 25px 0;
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+    transition: padding .3s;
+}
+
+.navbar-custom {
+    background: #2C3E50;
+    font-weight: 700;
+    border: none;
+}
+.navbar-custom, header .intro-text .name {
+    font-family: $font-family-base;
+    text-transform: uppercase;
+}
