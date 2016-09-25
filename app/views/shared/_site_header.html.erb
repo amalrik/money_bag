@@ -7,18 +7,31 @@
           </button>
           <a class="navbar-brand" href="#page-top">Money Bag</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <% if current_user %>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-              <li class="page-scroll">
-                  <a href="#signup">Sign Up</a>
-              </li>
-              <li class="page-scroll">
-                  <a href="#signin">Sign In</a>
-              </li>
+            <li class="page-scroll">
+              Logged in as <%= current_user.email %>
+            </li>
+            <li class="page-scroll">
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            </li>
           </ul>
-      </div>
-      <!-- /.navbar-collapse -->
+        </div>
+      <% else %>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="page-scroll">
+                  <%= link_to "Sign Up", new_user_registration_path %>
+                </li>
+                <li class="page-scroll">
+                  <%= link_to "Sign In", new_user_session_path %>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      <% end %>
   </div>
   <!-- /.container-fluid -->
 </nav>

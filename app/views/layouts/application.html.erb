@@ -10,6 +10,9 @@
 
   <body>
     <%= render 'shared/site_header' %>
-    <%= yield %>
+    <div class='container main-content'>
+      <%= yield %>
+    </div>
+    <%= render 'shared/site_footer' %>
   </body>
 </html>

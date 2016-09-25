@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-right">
+      <div class="btn-group" role="group" aria-label="new event">
+        <%= link_to("New event", new_event_path , {remote: true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: "btn btn-primary"}) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal-window" class="container modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<%= render 'table' %>
