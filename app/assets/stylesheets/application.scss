@@ -41,3 +41,13 @@ body {
 .navbar-custom:hover {
     color: #5e5e5e;
 }
+
+.navbar-nav > li {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+    a {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+}

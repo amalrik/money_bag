@@ -1,0 +1,5 @@
+$(".new_event").html("<h1>You have created an event</h1>");
+$(".modal-footer").remove();
+setTimeout(function () {
+   window.location.href = "<%= dashboard_path(current_user.dashboard) %>";
+}, 1300);
