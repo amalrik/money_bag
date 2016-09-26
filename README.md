@@ -1,24 +1,17 @@
-# README
+# Money Bag
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+this is a simple RoR app.
+to get started you need
 
-Things you may want to cover:
+ * Ruby 2.3.1
 
-* Ruby version
+ * Rails 5
 
-* System dependencies
+ * postgresql
+ 
+ * getting started:
+  -bundle install  
+  -rails db:create db:migrate
+  -rails s
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+enjoy!
