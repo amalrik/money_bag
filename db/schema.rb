@@ -10,18 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924185305) do
+ActiveRecord::Schema.define(version: 20160926023518) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "dashboards", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "balance_cents",    default: 0,     null: false
     t.string   "balance_currency", default: "USD", null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.index ["user_id"], name: "index_dashboards_on_user_id", using: :btree
   end
 
   create_table "events", force: :cascade do |t|
@@ -34,6 +32,16 @@ ActiveRecord::Schema.define(version: 20160924185305) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["dashboard_id"], name: "index_events_on_dashboard_id", using: :btree
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.boolean  "owner"
+    t.integer  "dashboard_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["dashboard_id"], name: "index_memberships_on_dashboard_id", using: :btree
+    t.index ["user_id"], name: "index_memberships_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

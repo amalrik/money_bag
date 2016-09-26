@@ -8,7 +8,11 @@
         <span class="site-description">Manage your finances easily</span>
         <div class='row'>
           <div class="btn-group" role="group">
-            <%= link_to "Start right now!", new_user_session_path, class: 'btn btn-warning', role: 'button' %>
+            <% if user_signed_in? %>
+              <%= link_to "Go to your dashboard", dashboard_path(current_user.dashboards.first), class: 'btn btn-warning', role: 'button' %>
+            <% else %>
+              <%= link_to "Start right now!", new_user_session_path, class: 'btn btn-warning', role: 'button' %>
+            <% end %>
           </div>
         </div>
       </div>

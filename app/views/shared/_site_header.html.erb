@@ -5,7 +5,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand" href="#page-top">Money Bag</a>
+          <%= link_to("Money Bag", root_path , class:"navbar-brand") %>
       </div>
       <% if current_user %>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

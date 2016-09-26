@@ -1,5 +1,6 @@
 class Dashboard < ApplicationRecord
-  belongs_to :user
+  has_many :memberships
+  has_many :users, through: :memberships
   has_many :events, dependent: :destroy
 
   monetize :balance_cents
@@ -12,8 +13,8 @@ class Dashboard < ApplicationRecord
     self.save
   end
 
-  #def balance_cents=(event)
-  #  event.kind == 'income' ? self[:balance_cents] += event.amount.fractional :
-  #                           self[:balance_cents] -= event.amount.fractional
-  #end
+  def colaborators
+    users.merge(Membership.colaborators)
+  end
+
 end

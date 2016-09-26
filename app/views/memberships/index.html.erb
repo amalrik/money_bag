@@ -1,0 +1,33 @@
+<%= form_tag '/memberships/destroy', method: :delete do %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="table-responsive">
+          <table summary="Select the colaborators you want to exclude" class="table table-bordered table-hover">
+            <caption class="text-center">Select the colaborators you want to exclude</caption>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>email</th>
+                <th>joined at</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td><%= user.name %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.created_at %></td>
+                  <td><%= check_box_tag "users_ids[]", user.id %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= submit_tag "Delete selected" %>
+
+        </div><!--end of .table-responsive-->
+      </div>
+    </div>
+  </div>
+<% end %>
