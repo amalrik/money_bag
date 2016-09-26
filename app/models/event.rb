@@ -5,8 +5,5 @@ class Event < ApplicationRecord
     expense: 1
   }
   monetize :amount_cents
-  #composed_of :amount,
-  #            :class_name => 'Money',
-  #            :mapping => %w(amount cents),
-  #            :converter => Proc.new { |value| Money.new(value) }
+  
 end

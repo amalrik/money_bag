@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 20160924185305) do
 
   create_table "dashboards", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "balance_cents",    default: 0,     null: false
+    t.string   "balance_currency", default: "USD", null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.index ["user_id"], name: "index_dashboards_on_user_id", using: :btree
   end
 

@@ -10,10 +10,10 @@ class EventsController < ApplicationController
 
   def create
     dashboard = Dashboard.where(id: params[:event][:dashboard_id]).take
-    event = dashboard.events.build event_params
+    #event = dashboard.events.build event_params
 
     respond_to do |format|
-      if event.save
+      if dashboard.add_event event_params
         format.js { render 'create.js.erb' }
       else
         format.js { render 'create_error.js.erb' }

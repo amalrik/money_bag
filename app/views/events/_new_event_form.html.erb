@@ -27,6 +27,11 @@
     </div>
 
     <div class='row'>
+      <%= f.label :description %>:
+      <%= f.text_area :description %>
+    </div>
+
+    <div class='row'>
       <%= f.label :amount %>
       <%= f.text_field :amount, {value:nil, placeholder: '0,00'} %>
     </div>
