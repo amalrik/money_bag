@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   def new
-    @dashboard = current_user.dashboard
+    @dashboard = current_user.dashboards.first
     @event = @dashboard.events.build
     respond_to do |format|
       format.js {render 'new.js.erb'}

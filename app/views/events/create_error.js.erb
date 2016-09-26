@@ -1,5 +1,5 @@
 $(".new_event").html("<h1>An error prevent your event to be created, please try again</h1>");
 $(".modal-footer").remove();
 setTimeout(function () {
-   window.location.href = "<%= dashboard_path(current_user.dashboard) %>";
+   window.location.href = "<%= dashboard_path(current_user.dashboards.first) %>";
 }, 1300);
