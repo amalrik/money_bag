@@ -1,11 +1,8 @@
 FactoryGirl.define do
   factory :dashboard do
-    date "MyString"
-    datetime "MyString"
-    description "MyString"
-    string "MyString"
-    type 1
-    amount "MyString"
-    integer "MyString"
+    balance_cents 0
+    after(:create) do |dashboard|
+      dashboard.users << create(:user)
+    end
   end
 end

@@ -10,7 +10,6 @@ class EventsController < ApplicationController
 
   def create
     dashboard = Dashboard.where(id: params[:event][:dashboard_id]).take
-    #event = dashboard.events.build event_params
 
     respond_to do |format|
       if dashboard.add_event event_params

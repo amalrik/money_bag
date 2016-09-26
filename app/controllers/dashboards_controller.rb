@@ -7,6 +7,10 @@ class DashboardsController < ApplicationController
   end
 
   private
+  def check_permission_to_dashboard
+    redirect_to root_path unless user_has_access_to_dashboard?
+  end
+
   def user_has_access_to_dashboard?
     (current_user.dashboards.where id: params[:id]).present?
   end
