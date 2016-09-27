@@ -8,13 +8,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     dashboard = user_signed_in? ? current_user.dashboards.first : Dashboard.new
-    user = User.new params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    user = User.new users_params
     user.memberships.build(dashboard: dashboard, owner: !user_signed_in?)
     if user.save
       sign_in(user) unless user_signed_in?
       flash[:success] = 'user created successfuly'
       redirect_to after_sign_up_path_for(user)
     else
+      @user = User.new
       render :new
     end
   end

@@ -18,7 +18,7 @@ class Dashboard < ApplicationRecord
   end
 
   def owner
-    users.merge(Membership.administrators)
+    users.merge(Membership.administrators).take
   end
 
 end
